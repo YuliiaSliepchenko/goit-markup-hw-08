@@ -1,0 +1,84 @@
+.form{
+    display: flex;
+  }
+  .form:not(:first-child){
+    display: block;
+  }
+  .form-row {
+    font-size:12px;
+    line-height:1.1666;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+ 
+  
+  &__title:not(:first-child){
+    margin-top: 10px;
+  }
+  &__title{
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 10px;
+    color: var(--secondary-text-color);
+  }
+  &__test{
+    position: relative;
+  }
+  
+  &__test::after{
+    gap: 12px;
+    background-image: url(../images/icons/cross.svg);
+   background-repeat: no-repeat;
+   background-position: center;
+   border:1px solid var(--accent-color) ;
+  
+  color: var(--primary-white-color);
+  }
+  
+  
+  &:not(:last-child){
+    margin-bottom: 10px;
+  }
+  
+  &__input{
+    display: block;
+    max-width: 470px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid 
+    rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 12px 41px;
+    outline:none;
+    color:var(--input-color);
+  }
+  &__input.form-story{
+    min-height: 120px;
+    width: 448px;
+    transform: auto;
+    padding: 16px 12px;
+    resize: none;
+    width: 100%;
+  }
+  
+  &__input::placeholder {
+    color: var(--secondary-text-color);
+  }
+  
+  &__input:focus {
+      border: 1px solid var(--accent-color);
+    }
+    &__input .icon{
+       padding-right: 12px; 
+    }
+    &__input:focus + svg {
+        fill:var(--accent-color);
+      }
+  
+      &__svg {
+      position: absolute;
+      top: 20px;
+     transform:translateY(-50%);
+     left: 12px;
+      transition: fill 0.3s ease-in-out;
+    }
+}

@@ -1,0 +1,31 @@
+.help-section {
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 480px;
+   }
+  max-width: 100%; 
+  @media screen and (min-width: 1199px) {
+    padding-bottom: 0; 
+   }
+   @media screen and (max-width: 1199px) {
+    width: 100%;
+    max-width: 768px;
+   }
+  }
+
+  .help-section__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: flex-start;
+  @media screen and (min-width: 1199px) {
+    padding: 0 15px;
+   }
+  }
+  
+  
+ 
+  
+
+

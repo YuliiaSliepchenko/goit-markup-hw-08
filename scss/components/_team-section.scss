@@ -1,0 +1,14 @@
+.our-team{
+    background-color: var(--bgr-grey-color);
+    max-width: 100%;
+    
+    
+  
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+  }
+}

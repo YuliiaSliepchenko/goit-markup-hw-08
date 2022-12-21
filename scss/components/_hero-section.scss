@@ -1,0 +1,93 @@
+.hero-section {
+ 
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-direction: column;
+  padding: 118px 60px; 
+  max-height: 400px;
+  max-width: 1600px;
+  background-position: center center;
+   background-size: cover;
+ 
+  margin: 0 auto; 
+  width: 100%;
+  background-image: linear-gradient(to top,
+  var(--start-color),var(--end-color)
+  ),url(../images/adaptive/hero-mobile.jpg);
+
+  @media screen and (min-width: 480px)
+  {
+   width: 100%;
+  }
+  @media screen and (min-width: 768px)
+   {
+   width: 100%;
+  }
+   @media screen and (min-width: 1200px)
+  {
+    max-height: 600px;
+    padding: 200px 0;
+  }
+
+  @media (min-device-pixel-ratio: 2) and (max-width: 768px),
+    (min-resolution: 192dpi) and (max-width: 768px),
+    (min-resolution: 2dppx) and (max-width: 768px) 
+    {
+      background-image: linear-gradient(to top,
+      var(--start-color),var(--end-color)
+      ),url(../images/adaptive/hero-mobile@2x.jpg);
+    }
+    @media screen and (min-width: 768px) {
+      background-image: linear-gradient(to top,
+      var(--start-color),var(--end-color)
+        ),
+        url(../images/adaptive/hero-tablet.jpg);
+    }
+    @media (min-device-pixel-ratio: 2) and (min-width: 768px),
+    (min-resolution: 192dpi) and (min-width: 768px),
+    (min-resolution: 2dppx) and (min-width: 768px) {
+        background-image: linear-gradient(to top,
+      var(--start-color),var(--end-color)
+        ),
+        url(../images/adaptive/hero-tablet@2x.jpg);
+    }
+    @media screen and (min-width: 1199px) {
+      background-image: linear-gradient(to top,
+      var(--start-color),var(--end-color)
+        ),
+        url(../images/adaptive/hero-bg.jpg);
+    }
+    @media (min-device-pixel-ratio: 2) and (min-width: 1199px),
+    (min-resolution: 192dpi) and (min-width: 1199px),
+    (min-resolution: 2dppx) and (min-width: 1199px) {
+        background-image: linear-gradient(to top,
+        var(--start-color),var(--end-color)
+          ),
+        url(../images/adaptive/hero-bg@2x.jpg);
+    }
+  &__conteiner 
+  {
+  display: contents;
+  } 
+
+ &__title {
+    
+    display: inline-block;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+    font-size: 26px;
+    width: 360px;
+    @media screen and (min-width: 1200px)
+     {
+    font-size: 44px;
+    width: 696px;
+     }
+}
+}
