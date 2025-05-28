@@ -1597,11 +1597,14 @@ button {
 /*ai*/
 .ai {
   background-color: #f5f4fa;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
 }
 .ai:hover,
 .ai:focus {
+  display: block;
+}
+.ai_section {
   display: block;
 }
 
@@ -1670,9 +1673,9 @@ block-photo__ai____list:focus {
   align-content: center;
 }
 /* При hover контейнера */
-.hidden {
+/*.hidden {
   display: none;
-}
+}*/
 .block-photo__wrap_ai:hover {
   width: 100vw;
   height: 100vh;
@@ -1685,9 +1688,9 @@ block-photo__ai____list:focus {
 .section-develop_game_ai {
   background-color: #f5f4fa;
 }
-.block-wrap {
+/*.block-wrap {
   display: none;
-}
+}*/
 
 .header__conteiner .container_ai {
   background-color: #f5f4fa;
