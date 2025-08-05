@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ItEnAi - Курс Blender для дітей 9-18 років</title>
+    <link rel="stylesheet" href="../css/main.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <span>3D</span>
+                    </div>
+                    <div class="logo-text">
+                        <h1 class="header__logo">ItEnAi</h1>
+                        <p class="header__logo-text">3D School</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#about" class="nav-link">Про курс</a>
+                    <a href="#modules" class="nav-link">Модулі</a>
+                    <a href="#benefits" class="nav-link">Переваги</a>
+                    <a href="#pricing" class="nav-link">Ціни</a>
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Записатися</button>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <span class="star-icon">⭐</span>
+                        Топ курс з 3D моделювання
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Blender: Від основ до 
+                        <span class="gradient-text">анімації</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Навчись створювати неймовірні 3D-моделі, персонажів та анімації в безкоштовному професійному редакторі Blender. Курс для дітей 9-18 років від школи ItEnAi.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Модулі</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24</div>
+                            <div class="stat-label">Уроки</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">9-18</div>
+                            <div class="stat-label">Років</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToSection('contact')">
+                            Записатися на курс
+                        </button>
+                        <button class="btn btn-outline btn-large">
+                            ▶ Дивитися відео
+                        </button>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <div class="social-proof">
+                        <div class="avatars">
+                            <div class="avatar">1</div>
+                            <div class="avatar">2</div>
+                            <div class="avatar">3</div>
+                            <div class="avatar">4</div>
+                        </div>
+                        <div class="social-text">
+                            <div class="social-number">500+ учнів</div>
+                            <div class="social-label">вже навчаються з нами</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="https://pub-cdn.sider.ai/u/U0Y3H2XG568/web-coder/6883a2eef2d3a0ac8dc38920/resource/c4897a63-84d7-44b4-aa2b-4984f5d3c6c4.jpg" alt="3D моделювання в Blender">
+                        <div class="floating-element floating-3d">3D</div>
+                        <div class="floating-element floating-users">👥</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2-title">Про курс <span class="gradient-text">Blender</span></h2>
+                <p>Цей курс ідеально підходить для дітей, які хочуть освоїти 3D-графіку. Blender — це потужний безкоштовний інструмент, який допоможе створювати власні 3D-об'єкти для ігор, візуалізацій і творчих проєктів.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Навчання основам</h3>
+                    <p>3D-моделювання та скульптинг від простих форм до складних об'єктів</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Створення персонажів</h3>
+                    <p>Моделювання персонажів, предметів і середовищ для ігор та візуалізацій</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Анімація та ефекти</h3>
+                    <p>Основи анімації, візуальні ефекти та фізична симуляція</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Експорт у Unity</h3>
+                    <p>Підготовка моделей для використання у іграх та інших проєктах</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2-title">Програма <span class="gradient-text">навчання</span></h2>
+                <p>4 модулі, 24 уроки - від основ до створення професійних 3D-проєктів</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-1">1</div>
+                        <div class="module-info">
+                            <h3>Модуль 1: Основи 3D моделювання</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Знайомство з Blender-інтерфейс, навігація, гарячі клавіші</div>
+                        <div class="topic">✓ Основи моделювання - екструзія, boolean-операції</div>
+                        <div class="topic">✓ Моделювання простих об'єктів - куб, сфера, циліндр</div>
+                        <div class="topic">✓ Деталізація та топологія</div>
+                        <div class="topic">✓ Оптимізація сітки, правильне розташування полігонів</div>
+                        <div class="topic">✓ Збірка фінальної сцени - розташування об'єктів у сцені</div>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-2">2</div>
+                        <div class="module-info">
+                            <h3>Модуль 2: Матеріали та текстури</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Основи матеріалів у Blender - Shader Editor, принципи PBR</div>
+                        <div class="topic">✓ Створення простих матеріалів - кольори, прозорість, відблиск</div>
+                        <div class="topic">✓ Процедурні текстури - створення складних матеріалів без текстур</div>
+                        <div class="topic">✓ Скульптинг та деталізація</div>
+                        <div class="topic">✓ Імпорт PBR-текстур - робота з реалістичними матеріалами</div>
+                        <div class="topic">✓ Фіналізація проєкту - завершення текстурованої сцени</div>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-3">3</div>
+                        <div class="module-info">
+                            <h3>Модуль 3: Освітлення та рендер</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Види світла в Blender - точкове, площинне, сонячне, HDRI</div>
+                        <div class="topic">✓ Композиція кадру - як правильно вибудовувати сцену</div>
+                        <div class="topic">✓ Динамічне освітлення - як зробити сцену атмосферною</div>
+                        <div class="topic">✓ Деталізація сцени - додавання дрібних елементів</div>
+                        <div class="topic">✓ Фіналізація проєкту - отримання високоякісного рендеру</div>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-card">
+                    <div class="module-header">
+                        <div class="module-number module-4">4</div>
+                        <div class="module-info">
+                            <h3>Модуль 4: Анімація та фізика</h3>
+                            <div class="module-meta">
+                                <span>🕒 6 уроків</span>
+                                <span>🎯 Практичні завдання</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-topics">
+                        <div class="topic">✓ Основи анімації - ключові кадри, принципи руху</div>
+                        <div class="topic">✓ Анімація камери - створення динамічних рухів камери</div>
+                        <div class="topic">✓ Анімація об'єктів - зміна позиції, обертання, масштабування</div>
+                        <div class="topic">✓ Фізика в анімації - модифікатори фізики</div>
+                        <div class="topic">✓ Фізика в анімації - тканини, тверді тіла, частинки</div>
+                        <div class="topic">✓ Рендер анімації - оптимізація та вивід відео</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-project">
+                <span>🎯 Фінальний проєкт після кожного модуля</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2-title">Чому обирають <span class="gradient-text">наш курс?</span></h2>
+                <p>Ми створили найкращі умови для навчання дітей 3D-моделюванню</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">500+</div>
+                    <div class="stat-label">Випускників</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">95%</div>
+                    <div class="stat-label">Задоволених учнів</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">4.9</div>
+                    <div class="stat-label">Рейтинг курсу</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number gradient-text">24/7</div>
+                    <div class="stat-label">Підтримка</div>
+                </div>
+            </div>
+
+            <!-- Benefits Grid -->
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Розвиток мислення</h3>
+                    <p>Просторове та логічне мислення, креативність та уява</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Технічні навички</h3>
+                    <p>Професійні інструменти та методи роботи з 3D-графікою</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Швидкий старт</h3>
+                    <p>Від перших кроків до створення власних проєктів за 4 модулі</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Підтримка спільноти</h3>
+                    <p>Спілкування з однолітками та досвідченими викладачами</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Сертифікат</h3>
+                    <p>Офіційний сертифікат після завершення курсу</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌐</div>
+                    <h3>Майбутні професії</h3>
+                    <p>Підготовка до кар'єри в геймдеві, анімації, архвізуалізації</p>
+                </div>
+            </div>
+
+            <!-- Testimonial -->
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="quote">"</div>
+                    <blockquote>
+                        Мій син навчався на курсі Blender і тепер створює неймовірні 3D-моделі! 
+                        Викладачі професійні, а програма дуже цікава та зрозуміла для дітей.
+                    </blockquote>
+                    <div class="testimonial-author">
+                        Олена Петренко, мама учня
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2-title">Обери свій <span class="gradient-text">тарифний план</span></h2>
+                <p>Ми пропонуємо різні варіанти навчання, щоб кожна дитина могла знайти підходящий формат</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Базовий</h3>
+                        <div class="price">
+                            <span class="price-main">₴2999</span>
+                            <span class="price-old">₴3999</span>
+                        </div>
+                        <p class="duration">4 модулі</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> 24 відеоуроки</li>
+                        <li><span class="check">✓</span> Доступ до матеріалів на 6 місяців</li>
+                        <li><span class="check">✓</span> Практичні завдання</li>
+                        <li><span class="check">✓</span> Сертифікат про завершення</li>
+                        <li><span class="check">✓</span> Чат підтримки</li>
+                    </ul>
+                    <button class="btn btn-outline pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card pricing-popular">
+                    <div class="popular-badge">⭐ Найпопулярніший</div>
+                    <div class="pricing-header">
+                        <h3>Преміум</h3>
+                        <div class="price">
+                            <span class="price-main">₴4999</span>
+                            <span class="price-old">₴6999</span>
+                        </div>
+                        <p class="duration">4 модулі + бонуси</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> 24 відеоуроки + бонусні матеріали</li>
+                        <li><span class="check">✓</span> Доступ до матеріалів на 1 рік</li>
+                        <li><span class="check">✓</span> Практичні завдання з перевіркою</li>
+                        <li><span class="check">✓</span> Персональний наставник</li>
+                        <li><span class="check">✓</span> Групові онлайн зустрічі</li>
+                        <li><span class="check">✓</span> Сертифікат про завершення</li>
+                        <li><span class="check">✓</span> Пріоритетна підтримка 24/7</li>
+                        <li><span class="check">✓</span> Доступ до спільноти ItEnAi</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+
+                <!-- VIP Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>VIP</h3>
+                        <div class="price">
+                            <span class="price-main">₴7999</span>
+                            <span class="price-old">₴9999</span>
+                        </div>
+                        <p class="duration">Індивідуальне навчання</p>
+                    </div>
+                    <ul class="features-list">
+                        <li><span class="check">✓</span> Індивідуальні уроки з викладачем</li>
+                        <li><span class="check">✓</span> Персоналізована програма</li>
+                        <li><span class="check">✓</span> Безлімітний доступ до матеріалів</li>
+                        <li><span class="check">✓</span> Миттєва підтримка викладача</li>
+                        <li><span class="check">✓</span> Додаткові проєкти та завдання</li>
+                        <li><span class="check">✓</span> Підготовка портфоліо</li>
+                        <li><span class="check">✓</span> Рекомендації для подальшого навчання</li>
+                        <li><span class="check">✓</span> Гарантія результату</li>
+                    </ul>
+                    <button class="btn btn-outline pricing-btn" onclick="scrollToSection('contact')">Обрати план</button>
+                </div>
+            </div>
+
+            <div class="discount-banner">
+                <span>💰 Знижка 25% до кінця місяця!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="h2-title">Записатися на <span class="gradient-text">курс</span></h2>
+                <p>Залиште заявку і наш менеджер зв'яжеться з вами для консультації</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Форма реєстрації</h3>
+                    <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label>Ім'я дитини *</label>
+                            <input type="text" name="name" placeholder="Введіть ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email батьків *</label>
+                            <input type="email" name="email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Телефон *</label>
+                            <input type="tel" name="phone" placeholder="+380 (67) 123-45-67" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Вік дитини *</label>
+                            <input type="number" name="age" placeholder="9-18 років" min="9" max="18" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Тарифний план</label>
+                            <select name="plan">
+                                <option value="Базовий">Базовий - ₴2999</option>
+                                <option value="Преміум">Преміум - ₴4999</option>
+                                <option value="VIP">VIP - ₴7999</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Записатися на курс</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Контактна інформація</h3>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon contact-phone">📞</div>
+                            <div>
+                                <div class="contact-title">Телефон</div>
+                                <div class="contact-value">+380 (67) 123-45-67</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-email">✉️</div>
+                            <div>
+                                <div class="contact-title">Email</div>
+                                <div class="contact-value">info@itenai.com.ua</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-telegram">💬</div>
+                            <div>
+                                <div class="contact-title">Telegram</div>
+                                <div class="contact-value">@ItEnAi_School</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon contact-location">📍</div>
+                            <div>
+                                <div class="contact-title">Адреса</div>
+                                <div class="contact-value">м. Київ, вул. Хрещатик, 1</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="consultation-card">
+                        <h4>🎯 Безкоштовна консультація</h4>
+                        <p>Не знаєте який план обрати? Замовте безкоштовну консультацію з нашим експертом!</p>
+                        <button class="btn btn-secondary">Замовити консультацію</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- School Info -->
+                <div class="footer-section footer-main">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <span>3D</span>
+                        </div>
+                        <div class="logo-text">
+                            <h3 class="footer__logo">ItEnAi</h3>
+                            <p class="footer__logo-text">3D School</p>
+                        </div>
+                    </div>
+                    
+                    <p class="footer-description">
+                        Школа ItEnAi — провідний центр навчання дітей сучасним IT-технологіям. 
+                        Наш курс Blender допомагає дітям освоїти 3D-моделювання та анімацію на професійному рівні.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🎥</a>
+                        <a href="mailto:info@itenai.com.ua" class="social-link">✉️</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h4 class="footer__title">Швидкі посилання</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Про курс</a></li>
+                        <li><a href="#modules">Модулі</a></li>
+                        <li><a href="#benefits">Переваги</a></li>
+                        <li><a href="#pricing">Ціни</a></li>
+                        <li><a href="#contact">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h4 class="footer__title">Контакти</h4>
+                    <div class="footer-contacts">
+                        <p>📞 +380 (67) 123-45-67</p>
+                        <p>✉️ info@itenai.com.ua</p>
+                        <p>📍 м. Київ, вул. Хрещатик, 1</p>
+                        <p>🕒 Пн-Пт: 9:00-18:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 ItEnAi School. Всі права захищені.</p>
+                    <div class="footer-legal">
+                        <a href="#">Політика конфіденційності</a>
+                        <a href="#">Умови використання</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
