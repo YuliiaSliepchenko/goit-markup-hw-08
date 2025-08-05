@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ItEnAi — Курс з Python для дітей</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom right, #f0f4f8, #ffffff);
+        color: #1f2937;
+      }
+      header,
+      footer {
+        background-color: #1f2937;
+        color: white;
+        padding: 1em;
+        text-align: center;
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1em;
+      }
+      .hero {
+        text-align: center;
+        padding: 3em 1em;
+      }
+      .hero h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+      }
+      .hero p {
+        font-size: 1.2em;
+        margin-bottom: 1em;
+      }
+      .btn {
+        background: #3b82f6;
+        color: white;
+        padding: 0.75em 1.5em;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        cursor: pointer;
+      }
+      .program {
+        background: #e0f2fe;
+        padding: 2em 1em;
+        margin: 2em 0;
+        border-radius: 12px;
+      }
+      .program h2 {
+        margin-bottom: 1em;
+      }
+      .program ul {
+        list-style: none;
+        padding: 0;
+      }
+      .program li {
+        margin-bottom: 0.5em;
+        padding-left: 1.2em;
+        position: relative;
+      }
+      .program li::before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: green;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+      input,
+      textarea {
+        padding: 0.75em;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1em;
+      }
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 1.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>ItEnAi</h1>
+      <p>Курс з Python для дітей</p>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Вчи Python весело!</h1>
+        <p>
+          Курс з програмування для дітей від 9 до 15 років. Створення ігор,
+          чат-ботів, вивчення штучного інтелекту та багато іншого!
+        </p>
+        <button class="btn" onclick="scrollToForm()">Записатися</button>
+      </section>
+
+      <section class="program">
+        <h2>Програма курсу:</h2>
+        <ul>
+          <li>Основи Python</li>
+          <li>Створення власних ігор</li>
+          <li>Чат-боти та автоматизація</li>
+          <li>Вступ до штучного інтелекту</li>
+          <li>Фінальний проєкт та сертифікат</li>
+        </ul>
+      </section>
+
+      <section id="form">
+        <h2>Запишіть дитину на курс:</h2>
+        <form id="contactForm">
+          <input type="text" placeholder="Ім'я дитини" required />
+          <input type="number" placeholder="Вік" required />
+          <input type="tel" placeholder="Номер телефону" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Повідомлення (необов'язково)"></textarea>
+          <button type="submit" class="btn">Надіслати заявку</button>
+        </form>
+        <p id="formStatus"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ItEnAi. Усі права захищено.</p>
+    </footer>
+
+    <script>
+      function scrollToForm() {
+        document.getElementById("form").scrollIntoView({ behavior: "smooth" });
+      }
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          document.getElementById("formStatus").textContent =
+            "Заявку надіслано! Ми з вами зв’яжемося.";
+          this.reset();
+        });
+    </script>
+  </body>
+</html>

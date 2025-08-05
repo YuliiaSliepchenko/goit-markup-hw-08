@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ItEnAi — Курс 3D моделювання</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(to bottom right, #eff6ff, #f5f3ff, #fdf2f8);
+        color: #1f2937;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: linear-gradient(to right, #8b5cf6, #3b82f6);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+      .logo-icon {
+        background: linear-gradient(to right, #8b5cf6, #3b82f6);
+        border-radius: 0.5rem;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.75rem;
+      }
+      .btn-primary {
+        background: linear-gradient(to right, #8b5cf6, #3b82f6);
+        border: none;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: 0.3s;
+      }
+      .btn-primary:hover {
+        background: linear-gradient(to right, #7c3aed, #2563eb);
+        transform: scale(1.05);
+      }
+      .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(to right, #f3e8ff, #dbeafe);
+        color: #7c3aed;
+        font-weight: 500;
+        border-radius: 9999px;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(to right, #8b5cf6, #3b82f6, #ec4899);
+        -webkit-background-clip: text;
+        color: transparent;
+        margin: 0;
+      }
+      .hero p {
+        font-size: 1.25rem;
+        color: #4b5563;
+        max-width: 600px;
+        margin: 1rem auto 2rem;
+      }
+      .hero-buttons button {
+        margin: 0.5rem;
+      }
+      .hero img {
+        max-width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .section {
+        padding: 4rem 2rem;
+        background: white;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+      .feature-card {
+        background: linear-gradient(to bottom right, #f3f0ff, #e0f2fe);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        text-align: center;
+      }
+      .feature-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 9999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 1rem;
+        background: linear-gradient(to right, #8b5cf6, #3b82f6);
+        color: white;
+      }
+      .footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+      .footer p {
+        color: #9ca3af;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <div class="logo-icon" id="logo-icon"></div>
+        ItEnAi
+      </div>
+      <button class="btn-primary" onclick="scrollToForm()">
+        Записатися на курс
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="badge">
+        <i data-lucide="sparkles" class="icon"></i>&nbsp; Найкращий курс 3D
+        моделювання для дітей
+      </div>
+      <h1>Blender: Від основ<br />до анімації</h1>
+      <p>
+        Навчи дитину створювати власні 3D-світи, персонажів та анімації з нуля.
+        Професійний курс для майбутніх 3D-художників від 9 до 18 років.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn-primary">Почати навчання</button>
+        <button
+          class="btn-primary"
+          style="background: white; color: #7c3aed; border: 2px solid #ddd"
+        >
+          Переглянути програму
+        </button>
+      </div>
+      <div
+        style="
+          margin-top: 2rem;
+          position: relative;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+        "
+      >
+        <img
+          src="https://pub-cdn.sider.ai/u/U0NWHJX6632/web-coder/688389a894baea4807e2b4ac/resource/087477f9-6775-4ac0-b97d-4de51ba32a8d.jpg"
+          alt="3D курс"
+        />
+        <div
+          style="
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: #facc15;
+            color: #78350f;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: bold;
+            transform: rotate(12deg);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          "
+        >
+          <i data-lucide="trophy" class="icon"></i> ТОП курс 2024
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2
+        style="
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        "
+      >
+        Чому обирають наш курс?
+      </h2>
+      <p style="text-align: center; font-size: 1.2rem; color: #6b7280">
+        Унікальна методика навчання, що поєднує теорію з практикою
+      </p>
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon"><i data-lucide="users"></i></div>
+          <h3>Вік 9-18 років</h3>
+          <p>Програма адаптована для різних вікових груп</p>
+        </div>
+        <div class="feature-card">
+          <div
+            class="feature-icon"
+            style="background: linear-gradient(to right, #ec4899, #8b5cf6)"
+          >
+            <i data-lucide="palette"></i>
+          </div>
+          <h3>Творчий підхід</h3>
+          <p>Розвиваємо просторове мислення та креативність</p>
+        </div>
+        <div class="feature-card">
+          <div
+            class="feature-icon"
+            style="background: linear-gradient(to right, #3b82f6, #10b981)"
+          >
+            <i data-lucide="gamepad-2"></i>
+          </div>
+          <h3>Для геймдеву</h3>
+          <p>Створення об'єктів для ігор у Unity</p>
+        </div>
+        <div class="feature-card">
+          <div
+            class="feature-icon"
+            style="background: linear-gradient(to right, #10b981, #facc15)"
+          >
+            <i data-lucide="star"></i>
+          </div>
+          <h3>Професійно</h3>
+          <p>Навички для майбутньої цифрової професії</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="logo" style="justify-content: center">
+        <div class="logo-icon" id="footer-logo-icon"></div>
+        ItEnAi
+      </div>
+      <p>Школа IT-технологій для дітей та підлітків</p>
+      <p>&copy; 2024 ItEnAi. Усі права захищені.</p>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      function scrollToForm() {
+        alert(
+          "Прокрутка до форми — ще не реалізована. Можна додати як наступний крок :)"
+        );
+      }
+    </script>
+  </body>
+</html>
