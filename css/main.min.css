@@ -148,7 +148,7 @@ body {
 body .ai {
   margin: 0;
   padding: 0;
- /* display: flex;*/
+  /* display: flex;*/
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -213,10 +213,10 @@ button {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: var(--primary-white-color);
+  color: var(--primary-text-color);
 }
 .discription {
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
   font-weight: 400;
   font-size: 16px;
 }
@@ -689,15 +689,19 @@ button {
   gap: 30px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
 }
 @media screen and (min-width: 1199px) {
   .help-section__list {
-    padding: 0 15px;
+    padding: 70px 15px;
   }
+}
+.help-conteiner {
+  display: flex;
+  justify-content: center;
 }
 .advantage-card__title {
   font-size: 14px;
@@ -708,9 +712,12 @@ button {
   text-align: center;
 }
 .advantage-card__discription {
-  font-size: 14px;
+  font-size: 24px;
   line-height: 1.71;
   margin-top: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
 }
 .advantage-card:last-child {
   margin-right: 0;
@@ -731,8 +738,8 @@ button {
   width: 270px;
   height: 120px;
   width: 100%;
-  background: var(--bgr-grey-color);
-  border-radius: 4px;
+  background: var(--accent-color);
+  border-radius: 100px;
   margin-bottom: 30px;
   fill: currentColor;
 }
@@ -858,7 +865,7 @@ button {
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 20%;
   background-color: var(--primary-white-color);
 }
 @media screen and (min-width: 768px) {
