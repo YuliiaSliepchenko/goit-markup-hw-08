@@ -1435,7 +1435,7 @@ button {
   margin-top: 20px;
 }
 .social-item__link--footer {
-  fill: var(--primary-white-color);
+  fill: var(--bgr-darck-color);
 }
 .footer-input {
   display: -webkit-box;
@@ -1801,6 +1801,7 @@ block-photo__ai____list:focus {
 }
 button {
   color: var(--primary-text-color);
+  background: linear-gradient(135deg,var(--accent-color) 0%,var(--main-after-color) 100%);
 }
 .order-button {
   height: 50px;
@@ -1813,7 +1814,8 @@ button {
   border-radius: 4px;
   border: none;
   color: var(--bgr-darck-color);
-  background-color: var(--main-after-color);
+  background-color: linear-gradient(135deg,var(--main-after-color) 0%,var(--accent-color) 100%);
+  transform: translateY(-2px);
   font-weight: 700;
   font-size: 15px;
   line-height: 1.88;
@@ -1884,7 +1886,7 @@ button {
   -ms-flex-align: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0);
-  color: var(--primary-white-color);
+  color: var(--bgr-darck-color);
   background-color: var(--accent-color);
   font-weight: 700;
   font-size: 16px;
