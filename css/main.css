@@ -951,6 +951,7 @@ button {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  color: #000000;
 }
 
 .team-card {
@@ -984,6 +985,7 @@ button {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  color: black;
 }
 
 .modal-wrap {
