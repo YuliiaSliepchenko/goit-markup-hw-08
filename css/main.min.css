@@ -213,7 +213,7 @@ button {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  color: var(--primary-white-color);
+  color: var(--primary-text-color);
 }
 .discription {
   color: var(--primary-text-color);
@@ -434,9 +434,9 @@ button {
 }
 .adress-head__link:hover,
 .adress-head__link:focus {
-  color: var(--accent-color);
-  -webkit-text-stroke-color: #bb0dd2;
-  -webkit-text-stroke-width: 0.5px;
+  color: #e3f300;
+  -webkit-text-stroke-color: linear-gradient(to right, #01b7ff, #e3f300);
+  -webkit-text-stroke-width: 0.2px;
 }
 .adress-head__icon {
   fill: var(--secondary-text-color);
@@ -446,13 +446,13 @@ button {
 .adress-head__icon:hover,
 .adress-head__icon:focus {
   color: var(--accent-color);
-  -webkit-text-stroke-color: #bb0dd2;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: linear-gradient(to right, #01b7ff, #e3f300);
+  -webkit-text-stroke-width: 0.2px;
 }
 .adress-head__icon--svg {
   fill: currentColor;
-  -webkit-text-stroke-color: #bb0dd2;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: linear-gradient(to right, #01b7ff, #e3f300);
+  -webkit-text-stroke-width: 0.2px;
 }
 .adress-head__link:hover .icon-adress-link,
 .adress-head__link:focus .icon-adress-link {
@@ -668,7 +668,6 @@ button {
 @media screen and (max-width: 768px) {
   .help-section {
     width: 100%;
-    max-width: 480px;
   }
 }
 @media screen and (min-width: 1199px) {
@@ -679,7 +678,6 @@ button {
 @media screen and (max-width: 1199px) {
   .help-section {
     width: 100%;
-    max-width: 768px;
   }
 }
 .help-section__list {
@@ -740,7 +738,7 @@ button {
   width: 270px;
   height: 120px;
   width: 100%;
-  background: var(--accent-color);
+  background: linear-gradient(to right, #01b7ff, #e3f300);
   border-radius: 100px;
   margin-bottom: 30px;
   fill: currentColor;
@@ -874,6 +872,9 @@ button {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 20%;
   background-color: var(--primary-white-color);
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 }
 @media screen and (min-width: 768px) {
   .team-card {
@@ -1143,13 +1144,11 @@ button {
 @media screen and (min-width: 768px) and (max-width: 1200px) {
   .clients {
     width: 100%;
-    max-width: 768px;
   }
 }
 @media screen and (min-width: 1200px) {
   .clients {
     width: 100%;
-    max-width: 1200px;
   }
 }
 .clients-row {
@@ -1510,6 +1509,10 @@ button {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
