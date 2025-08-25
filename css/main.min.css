@@ -312,6 +312,7 @@ button {
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
+  display: flex;
 }
 .site-nave .linkcurrent {
   color: var(--accent-color);
@@ -1358,6 +1359,8 @@ button {
 .contacts__adress {
   display: grid;
   gap: 9px;
+  align-items: start;
+  justify-items: start;
 }
 .footer-adress__link {
   display: -webkit-box;
@@ -1377,7 +1380,7 @@ button {
   .footer-adress__link {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-content: start;
   }
 }
 .footer-adress__link:hover,
