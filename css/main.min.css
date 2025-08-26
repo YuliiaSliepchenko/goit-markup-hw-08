@@ -666,12 +666,13 @@ button {
 .help-section {
   max-width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .help-section {
     width: 100%;
+    justify-content: center;
   }
 }
-@media screen and (min-width: 1199px) {
+@media screen and (min-width: 768px) {
   .help-section {
     padding-bottom: 0;
   }
@@ -690,7 +691,7 @@ button {
   gap: 30px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: space-between;
+  justify-content: center;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
@@ -843,6 +844,8 @@ button {
     flex-direction: column;
     align-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
   }
 }
 .our-team {
