@@ -879,6 +879,7 @@ button {
   align-items: center;
   flex-direction: column;
   display: flex;
+  padding: 15px;
 }
 @media screen and (min-width: 768px) {
   .team-card {
