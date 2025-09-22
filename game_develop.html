@@ -425,7 +425,7 @@
             </svg>
           </button>
 
-          <form action="#" class="form">
+          <form form id="contactForm" action="https://formspree.io/f/movnnpnq" method="POST">
             <div class="form-row">
               <label for="user_name" class="form-row__title">Ім'я</label>
               <div class="form-row__test">
@@ -437,6 +437,8 @@
                   required
                   minlength="3"
                   maxlength="20"
+                  placeholder="Іван Франко" 
+                  required
                 />
                 <svg class="form-row__svg icon" width="18" height="18">
                   <use xlink:href="./images/sprite.svg#icon-person"></use>
@@ -455,6 +457,8 @@
                   required
                   minlength="13"
                   maxlength="13"
+                  placeholder="+380 (67) 123-45-67" 
+                  required
                 />
                 <svg class="form-row__svg icon" width="18" height="18">
                   <use xlink:href="./images/sprite.svg#icon-phone"></use>
@@ -473,6 +477,8 @@
                   required
                   minlength="3"
                   maxlength="20"
+                  placeholder="example@email.com"
+                  required
                 />
                 <svg class="form-row__svg icon" width="18" height="18">
                   <use xlink:href="./images/sprite.svg#icon-email"></use>
@@ -503,13 +509,14 @@
                 type="checkbox"
                 name="mail_send"
                 id="mail_send"
+                required
               />
               <label class="privacy__label" for="mail_send"
                 >Погоджуюся з розсилкою та приймаю
               </label>
               <a
                 class="privacy__link"
-                href="#"
+                href="./privacy.html"
                 target="_blank"
                 rel="nooper noreferrer"
                 >Умови договору</a
@@ -517,6 +524,7 @@
             </div>
             <button class="send-btn" type="submit">Відправити</button>
           </form>
+          <p id="status" style="margin-top:10px; font-weight:bold;"></p>
         </div>
       </div>
     </main>
@@ -530,7 +538,7 @@
             <ul class="contacts__adress">
               <li class="footer-adress list">
                 <a
-                  href="https://goo.gl/maps/wSFg71M6Uk85JUGh7"
+                  href="https://www.google.com/maps/place/1905-ho+roku+St,+29,+Kremenchuk,+Poltavs'ka+oblast,+39600/@49.0714048,33.4065769,19.44z/data=!4m6!3m5!1s0x40d752df4dc14d29:0x5b5517484156741c!8m2!3d49.0715557!4d33.4064093!16s%2Fg%2F1x6q08rc?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="footer-adress__link link"
@@ -539,7 +547,7 @@
               </li>
               <li class="contacts-info list">
                 <a
-                  href="schoolitenai@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=schoolitenai@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="contacts-info__link link"
@@ -663,5 +671,6 @@
     ></script>
     <script defer src="js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/form.js"></script>
   </body>
 </html>
