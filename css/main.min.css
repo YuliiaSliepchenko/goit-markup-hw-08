@@ -879,6 +879,7 @@ button {
   align-items: center;
   flex-direction: column;
   display: flex;
+  padding: 15px;
 }
 @media screen and (min-width: 768px) {
   .team-card {
@@ -1360,7 +1361,6 @@ button {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
 }
 .contacts__adress {
@@ -1823,7 +1823,7 @@ block-photo__ai____list:focus {
 }
 .filter__btn:hover,
 .filter__btn:focus {
-  color: var(--primary-white-color);
+  color: #6b7280;
   background-color: var(--accent-color);
   -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
