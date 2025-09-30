@@ -34,50 +34,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a class="header__logo logo" href="index.html"
             >ItEnAi<span>School</span></a
           >
-          <button type="button" class="btn-menu js-open-menu">
-            <svg width="40" height="40" aria-label="Перемикач мобільного меню">
-              <use href="./images/sprite.svg#icon-burger"></use>
-            </svg>
-          </button>
-          <div class="menu-container js-menu-container" id="mobile-menu">
-            <button type="button" class="menu-toggle js-close-menu">
-              <svg
-                width="40"
-                height="40"
-                aria-label="Перемикач мобільного меню"
-              >
-                <use href="./images/sprite.svg#icon-close"></use>
-              </svg>
-            </button>
+          <button type="button" class="btn-menu js-open-menu" aria-expanded="false">
+  <svg width="40" height="40" aria-label="Меню">
+    <use href="./images/sprite.svg#icon-burger"></use>
+  </svg>
+</button>
+          <div id="mobile-menu" class="menu-container js-menu-container">
+            <button type="button" class="menu-toggle js-close-menu" aria-label="Закрити">
+    <svg width="40" height="40"><use href="./images/sprite.svg#icon-close"></use></svg>
+  </button>
             <div>
               <ul class="mobile-menu">
-                <li class="mobile-menu__item">
-                  <a
-                    href="./index.html"
-                    class="linkcurrent mobile-menu__link link"
-                    >Головна</a
-                  >
-                </li>
-
-                <li class="mobile-menu__item">
-                  <a href="./index.html#help-section" 
-                     class="mobile-menu__link link"
-                    >Про нас</a
-                  >
-                </li>
-                <li class="mobile-menu__item"></li>
-                <a href="./index.html#footer"
-                   class="mobile-menu__link link"
-                  >Контакти</a
-                >
-
-                </li>
-                <li class="mobile-menu__item"></li>
-                <a href="./index.html#our-team"
-                   class="mobile-menu__link link"
-                  >Відгуки</a
-                >
-              </ul>
+    <li><a href="./index.html"              class="mobile-menu__link">Головна</a></li>
+    <li><a href="./index.html#help-section" class="mobile-menu__link">Про нас</a></li>
+    <li><a href="./index.html#footer"       class="mobile-menu__link">Контакти</a></li>
+    <li><a href="./index.html#our-team"     class="mobile-menu__link">Відгуки</a></li>
+  </ul>
             </div>
 
             <div>
