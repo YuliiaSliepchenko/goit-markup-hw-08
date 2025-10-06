@@ -739,7 +739,6 @@ button {
   justify-content: center;
   width: 270px;
   height: 120px;
-  width: 100%;
   background: linear-gradient(to right, #01b7ff, #e3f300);
   border-radius: 100px;
   margin-bottom: 30px;
@@ -761,6 +760,7 @@ button {
   .advantage-card {
     max-width: 354px;
     width: 100%;
+    text-align: -webkit-center;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -945,7 +945,8 @@ button {
 }
 @media screen and (max-width: 768px) {
   .modal {
-    max-width: 450px;
+    left: 188px;
+    max-width: 360px;
     width: 100%;
     max-height: 609px;
     height: 100%;
@@ -2037,7 +2038,7 @@ button {
 .menu-container .menu-toggle {
   position: absolute;
   top: 16px;
-  right: 32px;
+  right: 0px;
   color: var(--primary-white-color);
 }
 .mobile-menu {
@@ -2363,7 +2364,7 @@ button {
 
 /* хрестик */
 .menu-toggle {
-  position: absolute; top: 10px; right: 32px; bottom: 590px; width: 50%;
+  position: absolute; top: 10px; right: 32px; bottom: 390px; width: 50%;
   background: none; border: 0; cursor: pointer;
 }
 
@@ -2375,7 +2376,7 @@ button {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 70vh;
   background: #fff;
   box-shadow: -5px 0 20px rgba(0,0,0,.2);
   transform: translateX(100%);     /* заховане */
