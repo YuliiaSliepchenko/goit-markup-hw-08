@@ -1886,7 +1886,7 @@ button {
   transform: translateY(-2px);
   font-weight: 700;
   font-size: 15px;
-  line-height: 2.3;
+  line-height: 2.4;
   text-align: center;
   letter-spacing: 0.06em;
 }
@@ -1937,7 +1937,7 @@ button {
         min-width: 200px;
         min-height: 50px;
         margin-top: 17px;
-        margin-left: 41px;
+        margin-left: 37px;
     }
 }
 @media screen and (min-width: 768px) {
