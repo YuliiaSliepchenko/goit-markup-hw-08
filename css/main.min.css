@@ -173,10 +173,10 @@ button {
 }
 @media screen and (max-width: 768px) {
   .section {
-    padding: 60px 15px;
+    padding: 60px 0px;
   }
 }
-@media screen and (max-width: 1199px) {
+@media screen and (min-width: 1199px) {
   .section {
     padding: 60px 15px;
   }
@@ -187,6 +187,10 @@ button {
     padding-bottom: 94px;
   }
 }
+html, body {
+  overflow-x: hidden;
+}
+
 .section-develop_game {
   background-color: var(--header-bg-color);
   width: 100%;
@@ -753,7 +757,7 @@ button {
 }
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .advantage-card {
-    width: 450px;
+    
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1199px) {
@@ -945,11 +949,21 @@ button {
 }
 @media screen and (max-width: 768px) {
   .modal {
-    left: 188px;
-    max-width: 360px;
     width: 100%;
-    max-height: 609px;
     height: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .modal {
+    max-height: 570px;
+    max-width: 355px;
+  }
+}
+@media screen and (max-width: 480px) {
+    .privacy__link {
+        display: grid;
+        margin-top: 15px;
+        min-width: 200px;
   }
 }
 .modal__close {
@@ -1780,20 +1794,27 @@ block-photo__ai____list:focus {
     -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  flex-wrap: wrap;             /* дозволяє перенос на новий ряд */
   justify-content: center;
-  gap: 8px;
-  margin-bottom: 50px;
-  color: var(--primary-text-color);
-  line-height: 1.625;
-  font-weight: 500;
-  position: relative;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  list-style: none;
+  padding: 0;
+}
+.items {
+  list-style: none;
+}
+.items a {
+  text-decoration: none;
 }
 @media screen and (max-width: 768px) {
+  .filter {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
   .filter {
     align-items: center;
     flex-direction: column;
@@ -1806,15 +1827,21 @@ block-photo__ai____list:focus {
 }
 
 .filter__btn {
-  padding: 6px 22px;
-  border-radius: 4px;
-  line-height: 1.625;
-  font-weight: 500;
-  background-color: var(--bgr-grey-color);
+  width: 160px;                /* однакова ширина */
+  height: 44px;                /* однакова висота */
+  border-radius: 10px;         /* округлі кнопки */
+  background-color: transparent;
+  color: #000000;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
-  border: 0ch;
-  -webkit-transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;        /* прибирає фокусну обводку */
+  border: none;         /* якщо не потрібна рамка */
+  box-shadow: none;
 }
 @media screen and (min-width: 368px) {
   .filter {
@@ -1841,6 +1868,7 @@ button {
 }
 .order-button {
   height: 50px;
+  margin-top: 20px;
   width: 216px;
   font-style: normal;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -1858,7 +1886,7 @@ button {
   transform: translateY(-2px);
   font-weight: 700;
   font-size: 15px;
-  line-height: 1.88;
+  line-height: 2.3;
   text-align: center;
   letter-spacing: 0.06em;
 }
@@ -1904,6 +1932,23 @@ button {
     min-height: 50px;
   }
 }
+@media screen and (max-width: 480px) {
+    .send-btn {
+        min-width: 200px;
+        min-height: 50px;
+        margin-top: 17px;
+        margin-left: 41px;
+    }
+}
+@media screen and (min-width: 768px) {
+  .privacy__link {
+    display: grid;
+    margin-top: 15px;
+    min-width: 200px;
+  }
+}
+
+
 .send-btn:hover,
 .send-btn:focus {
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -1949,45 +1994,18 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 23px 25px 23px 0;
+  margin: 18px 25px 23px 0;
   border: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   background-color: #fff;
+  z-index: 1000; /* щоб бургер був над хедером */
 }
-@media screen and (min-width: 769px) {
-  .btn-menu {
-    display: none;
-  }
+@media (min-width: 769px) {
+  .btn-menu { display: none; }
 }
-.menu-toggle {
-  min-height: 40px;
-  min-width: 40px;
-  width: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-}
+
 @media (min-width: 768px) {
   .menu-toggle {
     
@@ -1999,32 +2017,16 @@ button {
 }
 .menu-container {
   position: fixed;
-  overflow-y: auto;
+  inset: 0;                 /* top/right/bottom/left: 0 */
   padding: 48px 40px;
   z-index: 999;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #fff;
-  -webkit-transform: translateX(100%);
+  justify-content: space-between;
+  background: #fff;
   transform: translateX(100%);
-  -webkit-transition: -webkit-transform 500ms
-    cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: -webkit-transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1),
-    -webkit-transform 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: transform 500ms cubic-bezier(0.075,0.82,0.165,1);
+  overflow-y: auto;
 }
 @media screen and (min-width: 768px) {
   .menu-container {
@@ -2032,20 +2034,15 @@ button {
   }
 }
 .menu-container.is-open {
-  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
+.menu-open .btn-menu { display: none; }
 .menu-container .menu-toggle {
   position: absolute;
   top: 16px;
-  right: 0px;
   color: var(--primary-white-color);
 }
-.mobile-menu {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
+.mobile-menu { margin: 0; padding: 0; list-style: none; }
 .mobile-menu__cont {
   padding: 30px;
   margin: 0;
@@ -2055,11 +2052,10 @@ button {
   display: block;
   padding-bottom: 32px;
   font-size: 40px;
-  line-height: 47px;
+  line-height: 1.175;
   color: var(--primary-text-color);
-  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  transition: color .25s ease;
 }
 .mobile-menu__link:hover,
 .mobile-menu__link:focus {
@@ -2364,8 +2360,15 @@ button {
 
 /* хрестик */
 .menu-toggle {
-  position: absolute; top: 10px; right: 32px; bottom: 390px; width: 50%;
-  background: none; border: 0; cursor: pointer;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 0;
 }
 
 /* ВАЖЛИВО: видали або закоментуй, якщо було раніше */
@@ -2376,7 +2379,7 @@ button {
   position: fixed;
   top: 0;
   right: 0;
-  height: 70vh;
+  height: 80vh;
   background: #fff;
   box-shadow: -5px 0 20px rgba(0,0,0,.2);
   transform: translateX(100%);     /* заховане */

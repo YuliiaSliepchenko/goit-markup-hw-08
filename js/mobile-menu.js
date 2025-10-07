@@ -2,11 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu     = document.querySelector('#mobile-menu');
   const openBtn  = document.querySelector('.js-open-menu');
   const closeBtn = document.querySelector('.js-close-menu');
+  const body     = document.body;
 
   if (!menu || !openBtn || !closeBtn) return;
 
-  const open  = () => { menu.classList.add('is-open'); openBtn.setAttribute('aria-expanded','true'); };
-  const close = () => { menu.classList.remove('is-open'); openBtn.setAttribute('aria-expanded','false'); };
+  const open  = () => {
+    menu.classList.add('is-open');
+    body.classList.add('menu-open', 'no-scroll');  // ← ховаємо бургер і блокуємо скрол
+    openBtn.setAttribute('aria-expanded','true');
+  };
+
+  const close = () => {
+    menu.classList.remove('is-open');
+    body.classList.remove('menu-open', 'no-scroll');
+    openBtn.setAttribute('aria-expanded','false');
+  };
 
   openBtn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
