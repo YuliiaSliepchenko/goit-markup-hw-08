@@ -525,6 +525,27 @@ html, body {
     ),
     url(../images/adaptive/hero_mobile.png);
 }
+/* === Hero Section Hover Zoom === */
+.hero-section {
+  transition: background-size 1s ease, transform 1s ease;
+  background-size: cover;
+  background-position: center center;
+}
+
+/* ефект при наведенні */
+.hero-section:hover {
+  background-size: 125%; /* трохи збільшуємо фон */
+  transform: scale(1.01); /* легке “дихання” секції */
+}
+
+/* щоб не впливало на мобілки — лише з планшета */
+@media (max-width: 768px) {
+  .hero-section:hover {
+    background-size: cover;
+    transform: none;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .hero-section {
     width: 100%;
@@ -732,14 +753,8 @@ html, body {
   margin-right: 0;
 }
 .advantage-card__svg {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 270px;
   height: 120px;
@@ -747,6 +762,19 @@ html, body {
   border-radius: 100px;
   margin-bottom: 30px;
   fill: currentColor;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.advantage-card__svg:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  background: linear-gradient(to right, #00e0ff, #ffef00);
+}
+
+/* Анімація підпису (опційно, для плавного прояву) */
+.advantage-card__discription {
+  transition: color 0.3s ease;
 }
 @media screen and (min-widht: 480px) {
   .advantage-card {
@@ -785,46 +813,49 @@ html, body {
 .action-photo__item {
   position: relative;
   overflow: hidden;
-  border-radius: 1000px;
+  border-radius: 50%;
+  width: 370px;               /* фіксований діаметр кола */
+  aspect-ratio: 1 / 1;        /* забезпечує форму круга */
   cursor: pointer;
+  margin: 0 auto;
+}
+.action-photo__item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;          /* щоб не розтягувалось */
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+.action-photo__item:hover img {
+  transform: scale(1.06);
 }
 .action-photo__discription {
   position: absolute;
-  top: 76%;
-  left: 15%;
-  padding-top: 3px;
-  /* padding-left: 2px; */
-  padding-right: 12px;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  height: 45px;
-  min-width: 273px;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  background: rgba(47, 48, 58, 0.8);
+  color: #fff;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.1428;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
-  background: rgba(47, 48, 58, 0.8);
-  color: var(--primary-white-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  letter-spacing: 0.03em;
   text-align: center;
-  /* padding: 27px 80px; */
-  overflow: auto;
-  -webkit-transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  align-content: flex-start;
-  align-items: center;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  /* border-radius: 50px; */
-  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.action-photo__item:hover .action-photo__discription {
+  opacity: 1;
+}
+
+/* Для мобілок */
+@media (max-width: 480px) {
+  .action-photo__item {
+    width: min(80vw, 370px);
+  }
 }
 .action-photo__title {
   margin-bottom: 50px;
@@ -908,6 +939,49 @@ html, body {
   font-size: 16px;
   line-height: 1.19;
 }
+/* контейнер для фото — круг та кроп */
+.team-card picture,
+.team-card img {
+  display: block;
+}
+
+.team-card picture {
+  width: 180px;          /* підженеш за макетом */
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* саме фото */
+.team-card picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* без спотворень */
+  transform: scale(1);    /* старт */
+  transition: transform .6s ease;
+  will-change: transform;
+}
+
+/* зум при наведенні на картку */
+.team-card:hover picture img {
+  transform: scale(1.08); /* м’яко збільшуємо */
+}
+
+/* легка тінь при ховері (опційно) */
+.team-card:hover picture {
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* адаптив — на мобілках фото трохи менше */
+@media (max-width: 480px){
+  .team-card picture{
+    width: 140px;
+    height: 140px;
+  }
+}
+
 .modal-wrap {
   position: fixed;
   left: 0;
@@ -1563,6 +1637,36 @@ html, body {
   justify-content: center;
   /*overflow: hidden;*/
 }
+/* Контейнер зображення */
+.block-photo__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* важливо для обрізання при зумі */
+  border-radius: 12px; /* можна прибрати, якщо не потрібно */
+}
+
+/* Саме зображення */
+.block-photo__wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+/* Ефект при наведенні */
+.block-photo__wrap:hover img {
+  transform: scale(1.06);   /* легкий зум */
+  filter: brightness(1.1);  /* трохи підсвічується */
+}
+
+/* М’який рух при кліці */
+.block-photo__wrap:active img {
+  transform: scale(1.03);
+  transition: transform 0.2s ease;
+}
 
 .block-photo__wrap_ai {
   position: relative;
@@ -2051,7 +2155,7 @@ button {
 .mobile-menu__link {
   display: block;
   padding-bottom: 32px;
-  font-size: 40px;
+  font-size: 32px;
   line-height: 1.175;
   color: var(--primary-text-color);
   text-decoration: none;
