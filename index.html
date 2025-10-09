@@ -776,5 +776,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script defer src="js/mobile-menu.js"></script>
     <script src="./js/modal.js"></script>
     <script src="./js/form.js"></script>
+    <script>
+document.addEventListener('wpcf7mailsent', function(event) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'formSubmission',
+    'formId': event.detail.contactFormId, // наприклад 196
+    'formName': event.target.getAttribute('data-name') || 'Contact Form 7'
+  });
+});
+</script>
   </body>
 </html>
