@@ -1,15 +1,47 @@
-const form   = document.getElementById("contactForm");
-  const status = document.getElementById("status");        // можна сховати через CSS, якщо не потрібен
-  const popup  = document.getElementById("successPopup");  // <div class="success-popup" id="successPopup">...</div>
+(function () {
+  const form   = document.getElementById("contactForm");
+  const status = document.getElementById("status");
+  const popup  = document.getElementById("successPopup");
+
+  if (!form) return;
+
+  let t1 = null, t2 = null;
+
+  const showPopup = () => {
+    if (!popup) return;
+    clearTimeout(t1); clearTimeout(t2);
+    popup.classList.remove("hide");
+    popup.classList.add("show");
+    t1 = setTimeout(() => {
+      popup.classList.remove("show");
+      popup.classList.add("hide");
+    }, 2500);
+    t2 = setTimeout(() => {
+      popup.classList.remove("hide");
+    }, 3500);
+  };
+
+  const hidePopup = () => {
+    if (!popup) return;
+    clearTimeout(t1); clearTimeout(t2);
+    popup.classList.remove("show");
+    popup.classList.add("hide");
+    setTimeout(() => popup.classList.remove("hide"), 800);
+  };
+
+  if (popup) {
+    popup.addEventListener("click", hidePopup);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hidePopup();
+    });
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-
     if (status) status.textContent = "";
 
     try {
       const data = new FormData(form);
-
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
@@ -17,32 +49,25 @@ const form   = document.getElementById("contactForm");
       });
 
       if (response.ok) {
-        // показати попап (виїзд справа → в центр)
-        if (popup) {
-          popup.classList.remove("hide");
-          popup.classList.add("show");
-        }
+        // 1️⃣ показати анімацію
+        showPopup();
 
-        // текстовий статус (необов'язково)
+        // 2️⃣ текст під формою
         if (status) {
           status.style.color = "green";
           status.textContent = "✅ Повідомлення успішно відправлено!";
         }
 
+        // 3️⃣ клас для аналітики
+        form.classList.add("form--sent");
+
+        // 4️⃣ очистка форми
         form.reset();
 
-        // через 2.5 cек — запускаємо зникнення (вліво)
+        // 5️⃣ через ~1 сек редірект на Formspree “Thank you”
         setTimeout(() => {
-          if (popup) {
-            popup.classList.remove("show");
-            popup.classList.add("hide");
-          }
-        }, 2500);
-
-        // ще через 1 cек — прибираємо "hide", щоб підготувати до наступного показу
-        setTimeout(() => {
-          if (popup) popup.classList.remove("hide");
-        }, 3500);
+          window.location.href = "https://formspree.io/thanks";
+        }, 1000);
 
       } else {
         if (status) {
@@ -57,3 +82,6 @@ const form   = document.getElementById("contactForm");
       }
     }
   });
+
+  form.addEventListener("input", () => form.classList.remove("form--sent"));
+})();
