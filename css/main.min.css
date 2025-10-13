@@ -1575,14 +1575,17 @@ html, body {
   fill: var(--primary-white-color);
 }
 .footer-social__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  display: flex
+;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 15px;
 }
 .social-item__link--footer {
-  fill: var(--bgr-darck-color);
+  fill: var(--accent-color);
 }
 .footer-input {
   display: -webkit-box;
@@ -2014,9 +2017,9 @@ button {
   );
 }
 .order-button {
-  height: 50px;
+  height: 150px;
   margin-top: 20px;
-  width: 216px;
+  width: 250px;
   font-style: normal;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -2027,13 +2030,13 @@ button {
   color: var(--bgr-darck-color);
   background-color: linear-gradient(
     135deg,
-    var(--main-after-color) 0%,
-    var(--accent-color) 100%
+    var(--main-after-color) 70%,
+    var(--accent-color) 50%
   );
   transform: translateY(-2px);
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 2.4;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.8;
   text-align: center;
   letter-spacing: 0.06em;
 }
