@@ -1743,14 +1743,17 @@ html, body {
   fill: var(--primary-white-color);
 }
 .footer-social__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+  display: flex
+;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 15px;
 }
 .social-item__link--footer {
-  fill: var(--bgr-darck-color);
+  fill: var(--accent-color);
 }
 .footer-input {
   display: -webkit-box;
@@ -2190,9 +2193,13 @@ button {
   );
 }
 .order-button {
+<<<<<<< HEAD
   height: 70px;
+=======
+  height: 150px;
+>>>>>>> f32d2b537b2f1badaa7471cbc73cd85d898dc46c
   margin-top: 20px;
-  width: 216px;
+  width: 250px;
   font-style: normal;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -2202,12 +2209,19 @@ button {
   color: var(--bgr-darck-color);
   background: linear-gradient(
     135deg,
-    var(--main-after-color) 0%,
-    var(--accent-color) 100%
+    var(--main-after-color) 70%,
+    var(--accent-color) 50%
   );
+<<<<<<< HEAD
   font-weight: 700;
   font-size: 15px;
   line-height: 2.4;
+=======
+  transform: translateY(-2px);
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.8;
+>>>>>>> f32d2b537b2f1badaa7471cbc73cd85d898dc46c
   text-align: center;
   letter-spacing: 0.06em;
   transition: all 0.3s ease;
