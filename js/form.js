@@ -3,6 +3,10 @@
   const status = document.getElementById("status");
   const popup  = document.getElementById("successPopup");
 
+  // ==== НАЛАШТУВАННЯ ====
+  const THANKS_URL = "/thank-you.html";   // <-- ВАША сторінка подяки (замість Formspree)
+  const REDIRECT_DELAY_MS = 1200;         // затримка перед редіректом (анімація встигає з’явитись)
+
   if (!form) return;
 
   let t1 = null, t2 = null;
@@ -12,13 +16,16 @@
     clearTimeout(t1); clearTimeout(t2);
     popup.classList.remove("hide");
     popup.classList.add("show");
-    t1 = setTimeout(() => {
-      popup.classList.remove("show");
-      popup.classList.add("hide");
-    }, 2500);
-    t2 = setTimeout(() => {
-      popup.classList.remove("hide");
-    }, 3500);
+
+    // НЕ обов’язково ховати — все одно редіректимося
+    // Але якщо хочете — залиште автозакриття попапа:
+    // t1 = setTimeout(() => {
+    //   popup.classList.remove("show");
+    //   popup.classList.add("hide");
+    // }, 2500);
+    // t2 = setTimeout(() => {
+    //   popup.classList.remove("hide");
+    // }, 3500);
   };
 
   const hidePopup = () => {
@@ -49,10 +56,10 @@
       });
 
       if (response.ok) {
-        // 1️⃣ показати анімацію
+        // 1️⃣ показуємо анімацію
         showPopup();
 
-        // 2️⃣ текст під формою
+        // 2️⃣ фолбек-підпис під формою (за бажанням)
         if (status) {
           status.style.color = "green";
           status.textContent = "✅ Повідомлення успішно відправлено!";
@@ -61,13 +68,13 @@
         // 3️⃣ клас для аналітики
         form.classList.add("form--sent");
 
-        // 4️⃣ очистка форми
+        // 4️⃣ чистимо форму
         form.reset();
 
-        // 5️⃣ через ~1 сек редірект на Formspree “Thank you”
+        // 5️⃣ РЕДІРЕКТ НА ВАШУ THANK YOU СТОРІНКУ
         setTimeout(() => {
-          window.location.href = "https://formspree.io/thanks";
-        }, 1000);
+          window.location.href = THANKS_URL;
+        }, REDIRECT_DELAY_MS);
 
       } else {
         if (status) {
