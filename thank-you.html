@@ -3,58 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дякуємо за заявку!-ItEnAiSchool</title>
+
+  <!-- ✅ Google Analytics 4 базовий код -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5YZ1GYQJ0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F5YZ1GYQJ0');  // ← встав сюди свій GA4 ID
+  </script>
   <link rel="icon" href="./images/adaptive/favavItEnAi.png">
-  <title>Дякуємо — ItEnAi School</title>
+
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #01b7ff, #e3f300);
-      color: #111;
-      text-align: center;
-      animation: fadeIn 1s ease forwards;
-    }
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  color: #111;
+  background: linear-gradient(135deg, #00b4ff 0%, #f9ff3c 100%);
+  background-size: 300% 300%;
+  animation: gradientWave 8s ease-in-out infinite;
+  text-align: center;
+  overflow: hidden;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+/* 🌊 рух кольорів */
+@keyframes gradientWave {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5em;
-    }
+/* 📝 текст зліва направо */
+h1, p {
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: slideText 1.3s ease forwards;
+}
 
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2em;
-    }
+p {
+  animation-delay: 0.4s; /* після заголовка */
+  margin-top: 0px;
+}
 
-    a.button {
-      background: #fff;
-      color: #111;
-      text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.3s ease;
-    }
+@keyframes slideText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-    a.button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
+/* 🟢 кнопка знизу вгору */
+.button {
+  margin-block: 10px;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUp 1.2s ease forwards;
+  animation-delay: 1s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ ефект hover */
+.button:hover {
+  background: linear-gradient(90deg, #00b4ff, #3ce27e);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* 📱 адаптивність */
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  p { font-size: 0.95rem; margin-top: 0px;}
+  .button { padding: 10px 20px; font-size: 0.9rem; }
+}
   </style>
 </head>
+
 <body>
   <h1>✅ Дякуємо за заявку!</h1>
   <p>Ми зв’яжемось із вами найближчим часом 💛</p>
   <a href="index.html" class="button">⬅ Повернутись на головну</a>
+  <a href="game_develop.html" class="button">⬅ Повернутись на ігрову розробку</a>
+
+  <!-- ✅ Подія GA4 для сторінки подяки -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const GA_MEASUREMENT_ID = 'G-F5YZ1GYQJ0'; // ← твій GA4 ID
+    if (typeof gtag === 'function') {
+      gtag('event', 'form_thank_you', {
+        send_to: GA_MEASUREMENT_ID,
+        page_location: window.location.href,
+        page_title: document.title
+      });
+      console.log('✅ Подія form_thank_you надіслана у GA4');
+    } else {
+      console.warn('⚠️ gtag не знайдено');
+    }
+  });
+  </script>
 </body>
 </html>
