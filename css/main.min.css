@@ -2844,7 +2844,7 @@ button {
 
 #ai-chat-widget {
   position: fixed;
-  left: 20px;
+  right: 20px;
   bottom: 20px;
   width: 320px;
   height: 520px; /* висота під чат + кнопку */
@@ -2855,7 +2855,7 @@ button {
 
 #ai-chat-toggle {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   width: 60px;
   height: 60px;
@@ -2880,7 +2880,7 @@ button {
 
 #ai-chat-box {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 72px; /* чат стоїть над кнопкою */
   width: 320px;
   height: 460px;
