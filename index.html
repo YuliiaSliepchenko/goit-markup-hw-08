@@ -775,6 +775,10 @@ document.addEventListener('wpcf7mailsent', function(event) {
 
 <script>
 const API_URL = "https://sitechat-production.up.railway.app/chat";
+let chatHistory = [];
+
+// 🔥 НОВА СЕСІЯ КОЖЕН РАЗ
+let sessionId = "chat_" + Date.now();
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("ai-chat-toggle");
@@ -783,6 +787,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sendBtn = document.getElementById("ai-chat-send");
   const input = document.getElementById("ai-chat-input");
   const messages = document.getElementById("ai-chat-messages");
+  const widget = document.getElementById("ai-chat-widget");
 
   if (!toggle || !box || !closeBtn || !sendBtn || !input || !messages) {
     console.log("Chat elements not found");
@@ -791,24 +796,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   box.classList.add("ai-chat-hidden");
 
-const widget = document.getElementById("ai-chat-widget");
-
-toggle.addEventListener("click", () => {
-  box.classList.toggle("ai-chat-hidden");
-  widget.classList.toggle("open");
-});
+  toggle.addEventListener("click", () => {
+    box.classList.toggle("ai-chat-hidden");
+    widget.classList.toggle("open");
+  });
 
   closeBtn.addEventListener("click", () => {
-  box.classList.add("ai-chat-hidden");
-  widget.classList.remove("open");
-});
+    box.classList.add("ai-chat-hidden");
+    widget.classList.remove("open");
+  });
 
   function addMessage(text, type) {
     const div = document.createElement("div");
     div.className = "ai-message " + (type === "user" ? "ai-user-message" : "ai-bot-message");
     div.innerText = text;
+
     messages.appendChild(div);
     messages.scrollTop = messages.scrollHeight;
+
+    chatHistory.push({
+      role: type,
+      text: text
+    });
   }
 
   async function sendMessage() {
@@ -845,10 +854,28 @@ toggle.addEventListener("click", () => {
   sendBtn.addEventListener("click", sendMessage);
 
   input.addEventListener("keypress", e => {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
+    if (e.key === "Enter") sendMessage();
   });
+});
+
+// 🔥 ОСЬ ГОЛОВНЕ
+window.addEventListener("beforeunload", function () {
+  if (!chatHistory.length) return;
+
+  navigator.sendBeacon(
+    "https://script.google.com/macros/s/AKfycbyvRJm134vqSVpPM7pXx11q0kqdZdRAF9D8goMKxTFDcjGfd5uruS6IRTcdAg9uCQ9UTg/exec",
+    JSON.stringify({
+      name: sessionId,
+      phone: "",
+      email: "",
+      childAge: "",
+      subject: "Chat session " + sessionId,
+      message: chatHistory.map(m =>
+        (m.role === "user" ? "👤 " : "🤖 ") + m.text
+      ).join("\n\n"),
+      status: "chat"
+    })
+  );
 });
 </script>
 
