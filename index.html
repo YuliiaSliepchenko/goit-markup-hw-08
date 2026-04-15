@@ -870,6 +870,7 @@ window.addEventListener("beforeunload", function () {
       email: "",
       childAge: "",
       subject: "Chat session " + sessionId,
+      sessionId: sessionId, // 🔥 ОЦЕ ОБОВʼЯЗКОВО
       message: chatHistory.map(m =>
         (m.role === "user" ? "👤 " : "🤖 ") + m.text
       ).join("\n\n"),
