@@ -794,7 +794,12 @@ const API_URL = "https://sitechat-production.up.railway.app/chat";
 let chatHistory = [];
 
 // 🔥 НОВА СЕСІЯ КОЖЕН РАЗ
-let sessionId = "chat_" + Date.now();
+let sessionId = localStorage.getItem("chat_session_id");
+
+if (!sessionId) {
+  sessionId = "chat_" + Date.now() + "_" + Math.random().toString(36).substr(2,5);
+  localStorage.setItem("chat_session_id", sessionId);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("ai-chat-toggle");
@@ -875,18 +880,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // 🔥 ОСЬ ГОЛОВНЕ
+let sent = false;
+
 window.addEventListener("beforeunload", function () {
-  if (!chatHistory.length) return;
+  if (sent) return;
+
+  if (!chatHistory.length || chatHistory.length < 2) return;
+
+  sent = true;
 
   navigator.sendBeacon(
     "https://script.google.com/macros/s/AKfycbyvRJm134vqSVpPM7pXx11q0kqdZdRAF9D8goMKxTFDcjGfd5uruS6IRTcdAg9uCQ9UTg/exec",
     JSON.stringify({
-      name: sessionId,
-      phone: "",
-      email: "",
-      childAge: "",
+      name: "Chat User",
       subject: "Chat session " + sessionId,
-      sessionId: sessionId, // 🔥 ОЦЕ ОБОВʼЯЗКОВО
+      sessionId: sessionId,
       message: chatHistory.map(m =>
         (m.role === "user" ? "👤 " : "🤖 ") + m.text
       ).join("\n\n"),
