@@ -1556,7 +1556,7 @@ html, body {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
+    -webkit-box-pack: center;f
     -ms-flex-pack: center;
     justify-content: center;
     gap: 70px;
