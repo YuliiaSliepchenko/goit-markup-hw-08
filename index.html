@@ -240,6 +240,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="action-photo__discription">Програмування<br>на Python</p>
       </li>
 
+      <li class="action-photo__item">
+        <a class="link" target="_blank" href="https://yuliiasliepchenko.github.io/EnglishIT/">
+          <img src="./images/adaptive/EnglishTitle.png" alt="Програмування на Python" width="370" />
+        </a>
+        <p class="action-photo__discription">Англійська<br>мова</p>
+      </li>
+
     </ul>
   </div>
 </section>
@@ -547,7 +554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </svg>
           </button>
 
-          <form form id="contactForm" action="https://formspree.io/f/movnnpnq" method="POST">
+          <form id="contactForm" action="https://formspree.io/f/movnnpnq" method="POST">
             <div class="form-row">
               <label for="user_name" class="form-row__title">Ім'я</label>
               <div class="form-row__test">
@@ -738,6 +745,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- </form> -->
           </div>
         </div>
+        <div id="ai-chat-widget">
+  <button id="ai-chat-toggle" type="button">💬</button>
+
+  <div id="ai-chat-box" class="ai-chat-hidden">
+    <div id="ai-chat-header">
+      <span>ItEnAi Assistant</span>
+      <button id="ai-chat-close" type="button">✕</button>
+    </div>
+
+    <div id="ai-chat-messages">
+      <div class="ai-message ai-bot-message">
+        Привіт! 👋 Я допоможу підібрати курс для дитини
+      </div>
+    </div>
+
+    <div id="ai-chat-input-area">
+      <input type="text" id="ai-chat-input" placeholder="Напишіть повідомлення..." />
+      <button id="ai-chat-send" type="button">➤</button>
+    </div>
+  </div>
+</div>
       </div>
     </footer>
     <script
@@ -759,8 +787,113 @@ document.addEventListener('wpcf7mailsent', function(event) {
   });
 });
 </script>
-<script src="https://keepincrm.chat/chat-widget.js?widgetId=Ju86rJdkJl8U" async></script>
 <script src="js/avatar.js"></script>
+
+<script>
+const API_URL = "https://sitechat-production.up.railway.app/chat";
+let chatHistory = [];
+
+// 🔥 НОВА СЕСІЯ КОЖЕН РАЗ
+let sessionId = "chat_" + Date.now();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("ai-chat-toggle");
+  const box = document.getElementById("ai-chat-box");
+  const closeBtn = document.getElementById("ai-chat-close");
+  const sendBtn = document.getElementById("ai-chat-send");
+  const input = document.getElementById("ai-chat-input");
+  const messages = document.getElementById("ai-chat-messages");
+  const widget = document.getElementById("ai-chat-widget");
+
+  if (!toggle || !box || !closeBtn || !sendBtn || !input || !messages) {
+    console.log("Chat elements not found");
+    return;
+  }
+
+  box.classList.add("ai-chat-hidden");
+
+  toggle.addEventListener("click", () => {
+    box.classList.toggle("ai-chat-hidden");
+    widget.classList.toggle("open");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    box.classList.add("ai-chat-hidden");
+    widget.classList.remove("open");
+  });
+
+  function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = "ai-message " + (type === "user" ? "ai-user-message" : "ai-bot-message");
+    div.innerText = text;
+
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+
+    chatHistory.push({
+      role: type,
+      text: text
+    });
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    addMessage(text, "user");
+    input.value = "";
+    addMessage("Думаю...", "bot");
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text })
+      });
+
+      const data = await res.json();
+
+      if (messages.lastChild && messages.lastChild.innerText === "Думаю...") {
+        messages.lastChild.remove();
+      }
+
+      addMessage(data.response || "Сталася помилка. Спробуйте ще раз.", "bot");
+    } catch (e) {
+      if (messages.lastChild && messages.lastChild.innerText === "Думаю...") {
+        messages.lastChild.remove();
+      }
+
+      addMessage("Помилка з'єднання 😢", "bot");
+    }
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+
+  input.addEventListener("keypress", e => {
+    if (e.key === "Enter") sendMessage();
+  });
+});
+
+// 🔥 ОСЬ ГОЛОВНЕ
+window.addEventListener("beforeunload", function () {
+  if (!chatHistory.length) return;
+
+  navigator.sendBeacon(
+    "https://script.google.com/macros/s/AKfycbyvRJm134vqSVpPM7pXx11q0kqdZdRAF9D8goMKxTFDcjGfd5uruS6IRTcdAg9uCQ9UTg/exec",
+    JSON.stringify({
+      name: sessionId,
+      phone: "",
+      email: "",
+      childAge: "",
+      subject: "Chat session " + sessionId,
+      message: chatHistory.map(m =>
+        (m.role === "user" ? "👤 " : "🤖 ") + m.text
+      ).join("\n\n"),
+      status: "chat"
+    })
+  );
+});
+</script>
 
   </body>
 </html>
