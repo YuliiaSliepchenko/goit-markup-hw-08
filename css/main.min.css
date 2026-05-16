@@ -579,15 +579,15 @@ html, body {
 }
 /* === Hero Section Hover Zoom === */
 .hero-section {
-  transition: background-size 1s ease, transform 1s ease;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   background-size: cover;
   background-position: center center;
 }
 
 /* ефект при наведенні */
 .hero-section:hover {
-  background-size: 125%; /* трохи збільшуємо фон */
-  transform: scale(1.01); /* легке “дихання” секції */
+  transform: scale(1.08);
 }
 
 /* щоб не впливало на мобілки — лише з планшета */
