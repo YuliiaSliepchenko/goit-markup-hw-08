@@ -569,13 +569,13 @@ html, body {
       from(var(--start-color)),
       to(var(--end-color))
     ),
-    url(../images/adaptive/hero_mobile.png);
+    url(../images/adaptive/hero-mobile.jpg);
   background-image: linear-gradient(
       to top,
       var(--start-color),
       var(--end-color)
     ),
-    url(../images/adaptive/hero_mobile.png);
+    url(../images/adaptive/hero-mobile.jpg);
 }
 /* === Hero Section Hover Zoom === */
 .hero-section {
@@ -627,13 +627,13 @@ html, body {
         from(var(--start-color)),
         to(var(--end-color))
       ),
-      url(../images/adaptive/hero_mobile_2x.png);
+      url(../images/adaptive/hero-mobile2x.jpg);
     background-image: linear-gradient(
         to top,
         var(--start-color),
         var(--end-color)
       ),
-      url(../images/adaptive/hero_mobile_2x.png);
+      url(../images/adaptive/hero-mobile2x.jpg);
   }
 }
 @media screen and (min-width: 768px) {
@@ -645,13 +645,13 @@ html, body {
         from(var(--start-color)),
         to(var(--end-color))
       ),
-      url(../images/adaptive/hero_tablet.png);
+      url(../images/adaptive/hero-tablet.jpg);
     background-image: linear-gradient(
         to top,
         var(--start-color),
         var(--end-color)
       ),
-      url(../images/adaptive/hero_tablet.png);
+      url(../images/adaptive/hero-tablet.jpg);
   }
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 768px),
@@ -666,13 +666,13 @@ html, body {
         from(var(--start-color)),
         to(var(--end-color))
       ),
-      url(../images/adaptive/hero_tablet_2x.png);
+      url(../images/adaptive/hero-tablet-2x.jpg);
     background-image: linear-gradient(
         to top,
         var(--start-color),
         var(--end-color)
       ),
-      url(../images/adaptive/hero_tablet_2x.png);
+      url(../images/adaptive/hero-tablet-2x.jpg);
   }
 }
 @media screen and (min-width: 1199px) {
@@ -684,13 +684,13 @@ html, body {
         from(var(--start-color)),
         to(var(--end-color))
       ),
-      url(../images/adaptive/hero_bg.png);
+      url(../images/adaptive/hero-bg.jpg);
     background-image: linear-gradient(
         to top,
         var(--start-color),
         var(--end-color)
       ),
-      url(../images/adaptive/hero_bg.png);
+      url(../images/adaptive/hero-bg.jpg);
   }
 }
 @media (min-device-pixel-ratio: 2) and (min-width: 1199px),
@@ -705,13 +705,13 @@ html, body {
         from(var(--start-color)),
         to(var(--end-color))
       ),
-      url(../images/adaptive/hero_bg@2x.png);
+      url(../images/adaptive/hero-bg-2x.jpg);
     background-image: linear-gradient(
         to top,
         var(--start-color),
         var(--end-color)
       ),
-      url(../images/adaptive/hero_bg@2x.png);
+      url(../images/adaptive/hero-bg-2x.jpg);
   }
 }
 .hero-section__conteiner {
