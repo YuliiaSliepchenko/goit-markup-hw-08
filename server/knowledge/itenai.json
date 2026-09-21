@@ -1,0 +1,15 @@
+{
+  "brand": "ItEnAi School",
+  "type": "Online IT school for children",
+  "country": "Ukraine",
+  "age": "7-17",
+  "courses": [
+    "Roblox Studio",
+    "Python",
+    "AI Kids",
+    "Blender 3D",
+    "Game Development",
+    "Web Development"
+  ],
+  "mission": "Навчання дітей цифровим професіям через створення власних проєктів"
+}
