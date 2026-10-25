@@ -1,0 +1,246 @@
+/* Readability for the edited descriptions; retain the site's fonts and colors. */
+[aria-labelledby="about-itenai"] p.discription,
+[aria-labelledby="about-itenai"] li.discription,
+[aria-labelledby="faq-home"] .discription {
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+[aria-labelledby="about-itenai"] p.discription + p.discription {
+  margin-top: 12px;
+}
+
+.block-photo__filling > .discrip-photo {
+  overflow-wrap: break-word;
+}
+
+/* These sections share the navy and mint palette of the header and buttons. */
+[aria-labelledby="about-itenai"],
+[aria-labelledby="faq-home"] {
+  padding: clamp(48px, 6vw, 88px) 20px;
+}
+
+[aria-labelledby="about-itenai"] {
+  background: var(--header-bg-color, #0a102e);
+  color: #fff;
+}
+
+[aria-labelledby="about-itenai"] > .conteiner,
+[aria-labelledby="faq-home"] > .conteiner {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+[aria-labelledby="about-itenai"] .h2-title,
+[aria-labelledby="faq-home"] .h2-title {
+  margin: 0 0 28px;
+  font-size: clamp(28px, 3.5vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+[aria-labelledby="about-itenai"] .h2-title {
+  color: #fff;
+}
+
+[aria-labelledby="about-itenai"] .h2-title::after,
+[aria-labelledby="faq-home"] .h2-title::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 20px;
+  background: var(--accent-color, #a9fee9);
+}
+
+[aria-labelledby="about-itenai"] p.discription {
+  max-width: 850px;
+  color: #dce3f3;
+  font-size: 17px;
+}
+
+[aria-labelledby="about-itenai"] p.discription:first-of-type {
+  color: #fff;
+  font-size: clamp(18px, 2vw, 21px);
+}
+
+[aria-labelledby="about-itenai"] p.discription:last-of-type {
+  margin-top: 32px;
+  color: var(--accent-color, #a9fee9);
+  font-weight: 600;
+}
+
+[aria-labelledby="about-itenai"] ul.list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 14px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+
+[aria-labelledby="about-itenai"] ul.list > li.discription {
+  grid-column: span 2;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid #35425b;
+  border-radius: 16px;
+  background: #17223d;
+  color: #fff;
+  font-size: 16px;
+}
+
+[aria-labelledby="about-itenai"] ul.list > li.discription:nth-last-child(-n+2) {
+  grid-column: span 3;
+}
+
+[aria-labelledby="about-itenai"] ul.list > li::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 4px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  background: var(--accent-color, #a9fee9);
+}
+
+[aria-labelledby="about-itenai"] .clients-row__conteiner {
+  width: 100%;
+  padding: 0;
+  margin-top: 28px;
+}
+
+[aria-labelledby="about-itenai"] .clients-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+[aria-labelledby="about-itenai"] .clients-row__item {
+  flex: 0 1 auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid #35425b;
+  border-radius: 999px;
+  background: transparent;
+}
+
+[aria-labelledby="about-itenai"] .clients-row__item .discription {
+  color: #c8f9ec;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+[aria-labelledby="faq-home"] {
+  background: #f5f7fa;
+}
+
+[aria-labelledby="faq-home"] > .conteiner {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.65fr) minmax(0, 2fr);
+  gap: 48px;
+  align-items: start;
+}
+
+[aria-labelledby="faq-home"] .h2-title {
+  color: var(--header-bg-color, #0a102e);
+}
+
+[aria-labelledby="faq-home"] .faq-list {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+[aria-labelledby="faq-home"] details {
+  padding: 0;
+  border: 1px solid #dce3ec;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(10, 16, 46, 0.035);
+}
+
+[aria-labelledby="faq-home"] details[open] {
+  border-color: #78cbb4;
+  box-shadow: 0 6px 24px rgba(10, 16, 46, 0.06);
+}
+
+[aria-labelledby="faq-home"] summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--header-bg-color, #0a102e);
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 700;
+  border-radius: 16px;
+}
+
+[aria-labelledby="faq-home"] summary::-webkit-details-marker {
+  display: none;
+}
+
+[aria-labelledby="faq-home"] summary::after {
+  content: "";
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #23745e;
+  border-bottom: 2px solid #23745e;
+  transform: rotate(45deg);
+}
+
+[aria-labelledby="faq-home"] details[open] summary::after {
+  transform: rotate(225deg);
+}
+
+[aria-labelledby="faq-home"] summary:hover {
+  background: #f0fbf7;
+}
+
+[aria-labelledby="faq-home"] summary:focus-visible {
+  outline: 3px solid #23745e;
+  outline-offset: 3px;
+}
+
+[aria-labelledby="faq-home"] .discription {
+  margin: 0;
+  padding: 0 24px 24px;
+  color: #48556a;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  [aria-labelledby="about-itenai"] ul.list {
+    grid-template-columns: 1fr;
+  }
+  [aria-labelledby="about-itenai"] ul.list > li.discription,
+  [aria-labelledby="about-itenai"] ul.list > li.discription:nth-last-child(-n+2) {
+    grid-column: auto;
+    padding: 20px;
+  }
+  [aria-labelledby="faq-home"] > .conteiner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  [aria-labelledby="faq-home"] summary {
+    padding: 20px;
+    font-size: 16px;
+  }
+  [aria-labelledby="faq-home"] .discription {
+    padding: 0 20px 20px;
+  }
+}
